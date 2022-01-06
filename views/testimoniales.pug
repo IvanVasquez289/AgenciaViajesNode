@@ -1,0 +1,33 @@
+extends ./layout/index
+
+block contenido
+    main.container.mt-5
+        h1.text-center #{pagina} 
+        blockquote.text-center Lee sobre nuestros clientes y su experiencia
+
+        include ./layout/bloque_testimoniales
+        
+        .row    
+            .col-md-12
+                h2.text-center.w-100 Agrega un Testimonial
+                //- p=JSON.stringify(errores)
+                if(errores)
+                    each error in errores
+                        .alert.col.alert-danger.text-center=error.mensaje
+        .row.justify-content-center
+            .col-md-8
+                form(action="/testimoniales", method="post") 
+                    .form-gruop
+                        label(for="nombre") Nombre
+                        input#nombre(type="text", name="nombre", placeholder="Tu nombre",
+                        class="form-control mb-3",value=nombre) 
+                    .form-gruop
+                        label(for="correo") Correo Electronico
+                        input#correo(type="email", name="correo", placeholder="Tu correo"
+                        ,class="form-control mb-3" , value=correo) 
+                    .form-gruop
+                        label(for="mensaje") Mensaje
+                        textarea#mensaje(name="mensaje",placeholder="Tu mensaje",
+                        class="form-control mb-3",rows=3)=mensaje  
+                    input(type="submit", value="Enviar" class="btn btn-success btn-block")
+//- action es a donde se envian los datos por medio del metodo post
