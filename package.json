@@ -7,9 +7,13 @@
     "node": "12.11.1"
   },
   "scripts": {
-    "dev":"nodemon index.js",
-    "start": "node index.js"
-  },
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env = jsdom ",
+    "eject" :" react-scriptseject ",
+    " heroku-postbuild ":" npm run build "
+    },
   "type": "module",
   "author": "Ivan Vasquez",
   "license": "ISC",
@@ -17,7 +21,8 @@
     "express": "^4.17.2",
     "mysql2": "^2.3.3",
     "pug": "^3.0.2",
-    "sequelize": "^6.12.5"
+    "sequelize": "^6.12.5",
+    "serve": "^13.0.2"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
