@@ -14,7 +14,7 @@ db.authenticate()
 
  
 // Definir puerto
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8080;
 const host = process.env.HOST || "0.0.0.0";
 
 //  Habilitar pug
@@ -43,7 +43,7 @@ app.use("/",router)
 
 // Puerto para host y la app
  
-app.listen(port,host,()=>{
+app.listen(port,()=>{
     console.log(`El servidor esta funcionando en el puerto ${port}`)
 })
 
