@@ -28,7 +28,7 @@ CREATE TABLE `testimoniales` (
   `mensaje` text DEFAULT NULL,
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `testimoniales` (
 
 LOCK TABLES `testimoniales` WRITE;
 /*!40000 ALTER TABLE `testimoniales` DISABLE KEYS */;
-INSERT INTO `testimoniales` VALUES ('Ivan','zs20019172@estudiantes.uv.mx','Las mejores vacaciones',1),('Sergio','zs20019172@estudiantes.uv.mxs','Buenos precios!',2),('Norma','correo@correo.com','Me parece genial la atencion al cliente.',3),('Marta','marta@marta.com','Muy lindas vacaciones.',4),('Alberto','correo2@correo.com','De las mejores compras que he hecho, lo recomiendo mucho.',5);
+INSERT INTO `testimoniales` VALUES ('Ivan','zs20019172@estudiantes.uv.mx','Las mejores vacaciones',1),('Sergio','zs20019172@estudiantes.uv.mxs','Buenos precios!',2),('Norma','correo@correo.com','Me parece genial la atencion al cliente.',3),('Marta','marta@marta.com','Muy lindas vacaciones.',4),('Alberto','correo2@correo.com','De las mejores compras que he hecho, lo recomiendo mucho.',5),('Giovanny','giovanny@correo.com','Unos precios increibles',6);
 /*!40000 ALTER TABLE `testimoniales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-06 18:25:55
+-- Dump completed on 2022-01-07 16:15:43
