@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Primer proyecto con Node",
   "main": "index.js",
+  "engines": {
+    "node": "12.11.1"
+  },
   "scripts": {
     "dev":"nodemon index.js",
     "start":"nodemon --exect babel node index.js"
