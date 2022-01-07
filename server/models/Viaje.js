@@ -1,5 +1,5 @@
 import Sequelize  from "sequelize";
-import db from "../config/db.js";
+import db from '../config/db.js';
 
 // Vamos a difinir nuestro primer modelo
 export const Viaje = db.define("viajes",{

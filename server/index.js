@@ -1,22 +1,18 @@
 import express from "express";
 import router from "./routes/index.js";
 import db from "./config/db.js";
-const app = express()
-
-
 import dotenv from "dotenv"
 dotenv.config({path:"variables.env"});
 
+const app = express()
+
+
+
 // Conectar a la base de datos
 db.authenticate()
-.then( ()=> console.log("Base de datos conectada") )
-.catch(error=> console.log(error) )
-
- 
-// Definir puerto
-const port = process.env.PORT || 8000;
-const host = process.env.HOST || "0.0.0.0";
-
+    .then( ()=> console.log("Base de datos conectada") )
+    .catch(error=> console.log(error) )
+       
 //  Habilitar pug
 app.set("view engine","pug")
 
@@ -31,21 +27,31 @@ app.use((req,res,next)=>{
 // Agregar body parser para leer los datos del formulario
 app.use(express.urlencoded({extended:true}));
 
-
 // Definir la carpeta publica
 app.use(express.static("public"))
 
 // Agregar router
 app.use("/",router)
 
+// Definir puerto
+const host = process.env.HOST || '0.0.0.0';
+const port = process.env.PORT || 4000;
+
+
+
+
+
+
+
 // get es cuando visitas una url
 // req - lo que enviamos     res- lo que express nos responde 
 
 // Puerto para host y la app
  
-app.listen(port,()=>{
-    console.log(`El servidor esta funcionando en el puerto ${port}`)
-})
+app.listen(port, host, () => {
+    // Este mensaje deberá aparecer en el terminal de HEROKU, una vez subamos el proyecto
+    console.log('Servidor HEROKU funcionando.');
+});
 
 
 // PARA LA BASE DE DATOS ME METI A XAMPP Y ACTIVE LAS PRIMERAS DOS OPCIONES, DE AHI ME METI A TABLEPLUS CREE UNA NUEVA DB, PUSE LOS DATOS QUE VI

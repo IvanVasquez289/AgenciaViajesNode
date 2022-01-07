@@ -1,7 +1,7 @@
 
 // Importar el modelo
-import { Testimonial } from "../models/Testimonial.js"
-import { Viaje } from "../models/Viaje.js"
+import { Testimonial } from "../models/Testimonial.js";
+import { Viaje } from "../models/Viaje.js";
 const paginaInicio = async (req,res)=>{
  
     // obtener 3 viajes de la base de datos
@@ -13,7 +13,7 @@ const paginaInicio = async (req,res)=>{
     try {
         // con esto se ejecutan ambas consultas al mismo tiempo
         const resultado = await Promise.all(promiseDB)
-        res.render("inicio",{
+        res.render("../server/views/inicio",{
             pagina: "Inicio",
             clase: "home",
             viajes: resultado[0],
@@ -26,7 +26,7 @@ const paginaInicio = async (req,res)=>{
 }
  
 const paginaNosotros = (req,res)=>{
-    res.render("nosotros",{
+    res.render("../server/views/nosotros",{
         pagina: "Nosotros"
     })
 }
@@ -38,7 +38,7 @@ const paginaViajes = async (req,res)=>{
     console.log(viajes);
  
     // vista
-    res.render("viajes",{
+    res.render("../server/views/viajes",{
         pagina: "Proximos Viajes",
         viajes
     })
@@ -47,7 +47,7 @@ const paginaViajes = async (req,res)=>{
 const paginaTestimoniales = async (req,res)=>{
     try {
         const testimoniales = await Testimonial.findAll()
-        res.render("testimoniales",{
+        res.render("../server/views/testimoniales",{
             pagina: "Testimoniales",
             testimoniales
             
@@ -65,7 +65,7 @@ const paginaDetalleViaje = async (req,res) =>{
        const viaje = await Viaje.findOne({where: {slug}})
         
         // entonces cargaremos una vista llamada viaje 
-        res.render("viaje",{
+        res.render("../server/views/viaje",{
             pagina: "Informacion Viaje",
             viaje
         })   
