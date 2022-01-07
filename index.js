@@ -12,10 +12,9 @@ db.authenticate()
 .then( ()=> console.log("Base de datos conectada") )
 .catch(error=> console.log(error) )
 
-
+ 
 // Definir puerto
-// const port = process.env.PORT || 5000;
-const port;
+const port = process.env.PORT || 4000;
 const host = process.env.HOST || "0.0.0.0";
 
 //  Habilitar pug
@@ -44,10 +43,9 @@ app.use("/",router)
 
 // Puerto para host y la app
  
-// app.listen(port,host,()=>{
-//     console.log(`El servidor esta funcionando en el puerto ${port}`)
-// })
-app.listen(process.env.PORT || 5000)
+app.listen(port,host,()=>{
+    console.log(`El servidor esta funcionando en el puerto ${port}`)
+})
 
 
 // PARA LA BASE DE DATOS ME METI A XAMPP Y ACTIVE LAS PRIMERAS DOS OPCIONES, DE AHI ME METI A TABLEPLUS CREE UNA NUEVA DB, PUSE LOS DATOS QUE VI
